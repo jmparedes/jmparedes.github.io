@@ -1,80 +1,110 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-body{
-    background: #f6f5f7; 
+
+body {
+    background: #f6f5f7;
     font-family: 'Montserrat', sans-serif;
     color: #3E363F;
-}
-#contenedor{
-    width: 900px;
-    height: 500px;
-    text-align: center;
-    /* Estas 3 lineas se encargan de centrar el div vertical y horizontalmente */
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    border-radius: 10px;
-    overflow: hidden; 
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
-      0 10px 10px rgba(0,0,0,0.22);
-  }
-#calculadora{
-    background: white;
-    /* Con estas 3 lineas vamos a hacer que los divs queden lado a lado */
-    width: 50%;
-    height: 100%;
-    float: left;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-#detalle{
-    background: #FF416C;
-    /* Con estas 3 lineas vamos a hacer que los divs queden lado a lado */
-    width: 50%;
-    height: 100%;
-    float: left;
-    color: #f6f5f7;
-}
-.contenido{
-    /* Estas tres lineas van a centrar el contenido verticalmente dentro de cada div */
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+#contenedor {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 10px;
     overflow: hidden;
-    padding: 40px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                0 10px 10px rgba(0, 0, 0, 0.22);
+    display: flex;
 }
+
+#calculadora {
+    background: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#detalle {
+    background: #3498DB;
+    width: 100%;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify;
+}
+
+.contenido {
+    text-align: center;
+}
+
+
+
+#detalle ul {
+    line-height: 2.5; /* Ajusta el espacio entre líneas según tus preferencias */
+}
+
 input {
-	width: 70%;
-    padding: 12px 15px;
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 12px; /* Reducimos el padding para hacerlo más pequeño */
+    font-size: 14px; /* Reducimos el tamaño de fuente */
     border: none;
     background-color: #eee;
+    margin-bottom: 10px;
 }
 
 button {
-  font-size: 15px;
-	font-weight: bold;
-	padding: 12px 45px;
-	border-radius: 30px;
-	background-color: #FF416C;
-	border: 1px solid #FF416C;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	transition: transform 20ms ease-in;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 12px 45px;
+    border-radius: 30px;
+    background-color: #3498DB;
+    border: 1px solid #3498DB;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 20ms ease-in;
+    width: 100%;
+    max-width: 200px;
 }
-
 button:active {
-	transform: scale(0.95);
+    transform: scale(0.95); /* Reducir ligeramente el tamaño al hacer clic */
 }
-
-#error{
+#error {
     color: red;
     font-weight: bold;
-    display: none;
 }
 
-.resultado{
+.resultado {
     color: #0A81D1;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 15px;
     margin-bottom: 5px;
-    display: none;
+}
+
+/* Estilos para dispositivos pequeños (móviles) */
+@media (max-width: 767px) {
+    #contenedor {
+        max-width: 100%;
+        border-radius: 0;
+        flex-direction: column;
+    }
+
+    #calculadora, #detalle {
+        width: 100%;
+        padding: 20px;
+    }
+
+    input, button {
+        max-width: 100%;
+    }
 }
